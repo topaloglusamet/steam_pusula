@@ -1,0 +1,40 @@
+{
+  "manifest_version": 3,
+  "name": "Steam Pusula",
+  "version": "1.0",
+  "default_locale": "en",
+  "description": "__MSG_appDescription__",
+  "permissions": ["activeTab", "storage"],
+  "host_permissions": ["https://store.steampowered.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://store.steampowered.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/steam16.png",
+      "48": "icons/steam48.png",
+      "128": "icons/128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/steam.png",
+    "48": "icons/steam.png",
+    "128": "icons/steam.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "icons/steampusula.png",
+        "icons/rwr.png"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
